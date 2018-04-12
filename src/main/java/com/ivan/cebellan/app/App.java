@@ -23,7 +23,7 @@ public class App {
             
             System.out.println("Los jugadores de la partida son: " + player1.getName() + " y " + player2.getName());
             player1 = chooseShipsForPlayer(br, player1);
-            player2 = chooseShipsForPlayer(br, player2);
+            //player2 = chooseShipsForPlayer(br, player2);
             
             printPlayerMap(player1);
             System.out.println("  ");
