@@ -3,6 +3,7 @@ package com.ivan.cebellan.app;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,16 +41,37 @@ public class App {
             System.out.println("Elija las coordenadas (ejemplo: X,Y) de inicio del barco de tamaño " + ship.getSize());
             String coords = br.readLine();
             String[] coordsArray = coords.split(",");
-            player.getBoard().setCoordsValue(Integer.parseInt(coordsArray[0]), Integer.parseInt(coordsArray[1]), true);
-
+            int xStartCoord = Integer.parseInt(coordsArray[0]);
+            int yStartCoord = Integer.parseInt(coordsArray[1]);
+            player.getBoard().setCoordsValue(xStartCoord, yStartCoord, true);
+            
             if (ship.getSize() > 1){
                 System.out.println("Elija las coordenadas (ejemplo: X,Y) de fin del barco de tamaño " + ship.getSize());
                 coords = br.readLine();
                 coordsArray = coords.split(",");
-                player.getBoard().setCoordsValue(Integer.parseInt(coordsArray[0]), Integer.parseInt(coordsArray[1]), true);
+                int xEndCoord = Integer.parseInt(coordsArray[0]);
+                int yEndCoord = Integer.parseInt(coordsArray[1]);
+
+                if (ship.getSize() == 2) {
+                    if (xEndCoord < xStartCoord) {
+                        
+                    } else if (xEndCoord == xStartCoord) {
+                        
+                    } else if (xEndCoord > xStartCoord) {
+                        
+                    }
+                } else if (ship.getSize() == 3) {
+                    
+                } else if (ship.getSize() == 4) {
+                    
+                }
+                player.getBoard().setCoordsValue(xEndCoord, yEndCoord, true);
             }
         }
         return player;
+    }
+    private static void fillShipLines(int firstPositionX, int firstPositionY, int secondPositionX, int secondPositionY){
+        
     }
     private static void printPlayerMap(Player player){
         Board board = player.getBoard();

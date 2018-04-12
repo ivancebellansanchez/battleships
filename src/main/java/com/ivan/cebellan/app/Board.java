@@ -4,7 +4,7 @@ public class Board {
     private boolean[][] map = null;
     
     public Board(){
-        this.map = new boolean[9][9];
+        this.map = new boolean[10][10];
     }
     
     public boolean getCoords(int x, int y){
